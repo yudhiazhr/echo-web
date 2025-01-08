@@ -68,10 +68,6 @@ export default function Home() {
             },
           }
         );
-
-
-
-
       const mediaQuery = window.matchMedia('(min-width: 768px)');
       const updateAnimationStatus = () => {
           hoverTwitter.current = mediaQuery.matches;
@@ -127,7 +123,7 @@ export default function Home() {
     <>  
         {/* Hero */}
         <Navbar/>
-        <section id="/" className="Hero relative flex flex-col gap-[6vw] md:gap-[1.875vw] justify-center items-center min-h-dvh overflow-hidden bg-[#080807] z-[0]">
+        <section id="/" className="Hero relative flex flex-col gap-[6vw] md:gap-[1.875vw] justify-center items-center min-h-dvh overflow-hidden bg-[#080807] z-10">
 
             <div className="absolute top-[-10vw] left-[-8vw] w-[30vw] h-[30vw] rounded-full bg-purple-900/30 blur-[100px] z-[1]"></div>
             <div className="absolute bottom-[-33vw] right-[-60vw] md:bottom-[-10vw] md:right-[-8vw] w-[120vw] h-[120vw] md:w-[30vw] md:h-[30vw] rounded-full bg-purple-900/30 blur-[100px] z-[1]"></div>
@@ -138,9 +134,9 @@ export default function Home() {
             />
             <p className="hidden md:flex text-[1.5vw] md:text-base leading-[100%] text-center px-12 z-[2]">{copyHero}</p>
             <div className="flex gap-3 z-[2]">
-                <button className="px-4 md:px-8 py-3 md:py-4 rounded-xl border-2 text-[3.5vw] md:text-lg leading-[100%] border-[#493e60]">
+                <Link href={"#articles"} className="px-4 md:px-8 py-3 md:py-4 rounded-xl border-2 text-[3.5vw] md:text-lg leading-[100%] border-[#493e60]">
                    Articles
-                </button>
+                </Link>
                 <Link href={"/beta"} ref={tryEcho} onMouseEnter={handleTryEchoHoverEnter} onMouseLeave={handleTryEchoHoverLeave} className=" flex flex-col gap-3 items-center px-4 md:px-8 py-3 md:py-4 rounded-xl border-2 border-[#493e60] text-[3.5vw] md:text-lg overflow-hidden md:h-16 ">
                     <div className="flex gap-3 items-center">
                         <h1>Try ECHO</h1>
@@ -166,7 +162,7 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="About relative flex justify-center items-center px-4 md: py-32 w-full overflow-hidden bg-[#080807] z-[0]">
+        <section id="about" className="About relative flex justify-center items-center px-4 md: py-32 w-full overflow-hidden bg-[#080807] z-10">
             <div className="absolute w-[120vw] h-[120vw] top-[-93vw] right-[-56.5vw] md:top-[-20vw] md:right-[-8vw] md:w-[30vw] md:h-[30vw] rounded-full bg-purple-900/30 blur-[100px]"></div>
 
             <h1 className="text-[8vw] md:text-[4.5vw] leading-[130%] md:leading-[110%] font-medium max-w-[1440px] "
@@ -175,7 +171,7 @@ export default function Home() {
         </section>
 
         {/* Project */}
-        <section id="projects" className="Projects min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
+        <section id="projects" className="Projects relative min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-10">
             <h1 className=" text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleProject }}
             />
@@ -221,7 +217,7 @@ export default function Home() {
         </section>
 
         {/* Promise */}
-        <section id="promise" className="Promise min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
+        <section id="promise" className="Promise relative min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-10">
             <h1 className="  text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titlePromise }}
             />
@@ -322,7 +318,7 @@ export default function Home() {
         </section>
 
         {/* Github */}
-        <section id="github" className="Github py-24 flex flex-col gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
+        <section id="github" className="Github relative py-24 flex flex-col gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-10">
             <h1 className=" text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleGithub }}
             />
@@ -340,7 +336,7 @@ export default function Home() {
         </section>
 
         {/* Articles */}
-        <section id="articles" className="Articles py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
+        <section id="articles" className="Articles relative py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-10">
             <h1 className="text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleArticles }}
             />
@@ -356,7 +352,7 @@ export default function Home() {
                     <div className="flex flex-col gap-3 ">
                         <h1 className="text-[6vw] md:text-[3vw] 2xl:text-[2vw]">Introduction</h1>
                         <p className="text-[4.5vw] md:text-[3vw] 2xl:text-[2vw] text-blue-500">X Article</p>
-                        <div>
+                        <Link href={'https://x.com/echodotfun?s=21'} target="_blank">
                             <button className="relative group flex gap-3 items-center ">
                                 <h1 className="text-[4.5vw] md:text-[2.3vw] 2xl:text-[1vw] leading-[120%]">Click Here</h1>
                                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4.5vw] md:size-[2.5vw] 2xl:size-[1vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
@@ -364,7 +360,7 @@ export default function Home() {
                                 </svg>
                                 <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
                             </button>
-                        </div>
+                        </Link>
                     </div>
                 </div>
 
@@ -384,16 +380,15 @@ export default function Home() {
                     <div className="flex flex-col gap-3 ">
                         <h1 className="text-[6vw] md:text-[3vw] 2xl:text-[2vw]">Roadmap</h1>
                         <p className="text-[4.5vw] md:text-[3vw] 2xl:text-[2vw] text-blue-500">X Article</p>
-                        <div>
+                        <Link href={'https://x.com/echodotfun?s=21'} target="_blank">
                             <button className="relative group flex gap-3 items-center ">
                                 <h1 className="text-[4.5vw] md:text-[2.3vw] 2xl:text-[1vw] leading-[120%]">Click Here</h1>
                                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4.5vw] md:size-[2.5vw] 2xl:size-[1vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
-                    <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
-
+                                <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
                             </button>
-                        </div>
+                        </Link>
                         
                     </div>
                 </div>
@@ -410,16 +405,15 @@ export default function Home() {
                     <div className="flex flex-col gap-3 ">
                         <h1 className="text-[6vw] md:text-[3vw] 2xl:text-[2vw]">Debug®</h1>
                         <p className="text-[4.5vw] md:text-[3vw] 2xl:text-[2vw] text-blue-500">X Article</p>
-                        <div>
+                        <Link href={'https://x.com/echodotfun?s=21'} target="_blank">
                             <button className="relative group flex gap-3 items-center ">
                                 <h1 className="text-[4.5vw] md:text-[2.3vw] 2xl:text-[1vw] leading-[120%]">Click Here</h1>
                                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4.5vw] md:size-[2.5vw] 2xl:size-[1vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
-                    <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
-
+                                <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
                             </button>
-                        </div>
+                        </Link>
                         
                     </div>
                 </div>
@@ -435,52 +429,38 @@ export default function Home() {
                     <div className="flex flex-col gap-3 ">
                         <h1 className="text-[6vw] md:text-[3vw] 2xl:text-[2vw]">Upcoming</h1>
                         <p className="text-[4.5vw] md:text-[3vw] 2xl:text-[2vw] text-blue-500">X Article</p>
-                        <div>
+                        <Link href={'https://x.com/echodotfun?s=21'} target="_blank">
                             <button className="relative group flex gap-3 items-center ">
                                 <h1 className="text-[4.5vw] md:text-[2.3vw] 2xl:text-[1vw] leading-[120%]">Click Here</h1>
                                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4.5vw] md:size-[2.5vw] 2xl:size-[1vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
-                    <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
-
+                                <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
                             </button>
-                        </div>
-                        
+                        </Link>
                     </div>
                 </div>
             </div>
         </section>
 
         {/* Stay Informed and FAQ */}
-        <section id="faq" className="Faq relative py-24 flex flex-col gap-14 md:gap-28  overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
+        <section id="faq" className="Faq relative py-24 flex flex-col gap-14 md:gap-28  overflow-hidden px-4 md:px-10 bg-[#080807] z-10">
             <h1 className="text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleInformed }}
             />
 
             <div className="flex flex-col">
-                <div className="relative group py-10 flex flex-col gap-3 justify-center w-full md:w-[40%] border-y-2 border-[#232323]">
-                    <h1 className="text-[3.5vw] md:text-xl text-[#7b7b7b]">Telegram</h1>
-                    <div className="flex justify-between items-center">
-                        <h1 className="text-[6.5vw] md:text-[2.5vw] leading-[100%]">@echodotfun</h1>
-                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[7vw] md:size-[2.5vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
-
-                    </div>
-                </div>
-
-                <div className="relative group py-10 flex flex-col gap-3 justify-center w-full md:w-[40%] border-b-2 border-[#232323]">
+                <Link href={'https://x.com/echodotfun?s=21'} target="_blank" className="relative group py-10 flex flex-col gap-3 justify-center w-full md:w-[40%] border-b-2 border-[#232323]">
                     <h1 className="text-[3.5vw] md:text-xl text-[#7b7b7b]">X(Twitter)</h1>
                     <div className="flex justify-between items-center">
-                        <h1 className="text-[6.5vw] md:text-[2.5vw] leading-[100%]">@ECHOdotfun</h1>
+                        <h1 className="text-[6.5vw] md:text-[2.5vw] leading-[100%]">@Echodotfun</h1>
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[7vw] md:size-[2.5vw] text-blue-500 group-hover:rotate-[-45deg] transition-all duration-300">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         <div className="absolute bottom-0 left-0 w-full h-[0.5px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300"></div>
 
                     </div>
-                </div>
+                </Link>
             </div>
 
             <h1 className="text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
@@ -529,7 +509,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer id="footer" className="Footer sticky bottom-0 left-0 right-0 flex flex-col py-16 gap-4 overflow-hidden px-4 md:px-10 z-[-1]">
+        <footer id="footer" className="Footer sticky bottom-0 left-0 right-0 flex flex-col py-16 gap-4 overflow-hidden px-4 md:px-10 z-[0]">
             <div className="flex gap-8 justify-center items-center border-b-2 border-[#232323] pb-8">
                 <img src="/imgs/echo-logo.png" alt="" className=""/>
             </div>
@@ -573,8 +553,7 @@ export default function Home() {
                             onMouseLeave={handleTwitterHoverLeave} 
                             >
                             <a
-                            href=""
-                            target="_blank"
+                            href={'https://x.com/echodotfun?s=21'} target="_blank"
                             className="flex gap-2 items-center"
                             >
                                 <h1>X(Twitter)</h1>
@@ -585,9 +564,8 @@ export default function Home() {
                             </a>
 
                             <a
-                            href=""
-                            target="_blank"
-                            className="flex gap-2 items-center"
+                            href={'https://x.com/echodotfun?s=21'} target="_blank"
+                            className="gap-2 items-center hidden md:flex"
                             >
                                 <h1>X(Twitter)</h1>
                                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4vw] md:size-6 text-blue-300 rotate-[-45deg]"

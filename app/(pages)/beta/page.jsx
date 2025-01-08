@@ -31,7 +31,7 @@ const Beta = () => {
                             <Link href="/">Website</Link>
                         </li>
                         <li>
-                            <a href="" target="_blank">Twitter</a>
+                            <a href={'https://x.com/echodotfun?s=21'} target="_blank">X (Twitter)</a>
                         </li>
                     </ul>
                 </header>
