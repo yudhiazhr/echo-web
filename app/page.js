@@ -6,6 +6,7 @@ import Particles from "@/app/components/ui/particles"
 import { cardDebug, copyHero, debug, detailDebug, detailTas, detailTranslator, faqs, mainTitle, tas, titleAbout, titleArticles, titleFAQ, titleGithub, titleHero, titleInformed, titleProject, titlePromise, translator } from "@/app/constant/Text"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 export default function Home() {
@@ -69,6 +70,8 @@ export default function Home() {
         );
 
 
+
+
       const mediaQuery = window.matchMedia('(min-width: 768px)');
       const updateAnimationStatus = () => {
           hoverTwitter.current = mediaQuery.matches;
@@ -124,7 +127,7 @@ export default function Home() {
     <>  
         {/* Hero */}
         <Navbar/>
-        <section id="/" className="Hero relative flex flex-col gap-[6vw] md:gap-[1.875vw] justify-center items-center min-h-dvh overflow-hidden ">
+        <section id="/" className="Hero relative flex flex-col gap-[6vw] md:gap-[1.875vw] justify-center items-center min-h-dvh overflow-hidden bg-[#080807] z-[0]">
 
             <div className="absolute top-[-10vw] left-[-8vw] w-[30vw] h-[30vw] rounded-full bg-purple-900/30 blur-[100px] z-[1]"></div>
             <div className="absolute bottom-[-33vw] right-[-60vw] md:bottom-[-10vw] md:right-[-8vw] w-[120vw] h-[120vw] md:w-[30vw] md:h-[30vw] rounded-full bg-purple-900/30 blur-[100px] z-[1]"></div>
@@ -135,10 +138,10 @@ export default function Home() {
             />
             <p className="hidden md:flex text-[1.5vw] md:text-base leading-[100%] text-center px-12 z-[2]">{copyHero}</p>
             <div className="flex gap-3 z-[2]">
-                <button className="px-8 py-5 md:py-4 rounded-xl border-2 text-[3.5vw] md:text-lg leading-[100%] border-[#493e60]">
+                <button className="px-4 md:px-8 py-3 md:py-4 rounded-xl border-2 text-[3.5vw] md:text-lg leading-[100%] border-[#493e60]">
                    Articles
                 </button>
-                <button ref={tryEcho} onMouseEnter={handleTryEchoHoverEnter} onMouseLeave={handleTryEchoHoverLeave} className=" flex flex-col gap-3 items-center px-8 py-5 md:py-4 rounded-xl border-2 border-[#493e60] text-[3.5vw] md:text-lg overflow-hidden md:h-16 ">
+                <Link href={"/beta"} ref={tryEcho} onMouseEnter={handleTryEchoHoverEnter} onMouseLeave={handleTryEchoHoverLeave} className=" flex flex-col gap-3 items-center px-4 md:px-8 py-3 md:py-4 rounded-xl border-2 border-[#493e60] text-[3.5vw] md:text-lg overflow-hidden md:h-16 ">
                     <div className="flex gap-3 items-center">
                         <h1>Try ECHO</h1>
                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[4vw] md:size-7 text-blue-300 rotate-[-45deg]">
@@ -151,7 +154,7 @@ export default function Home() {
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                </button>
+                </Link>
             </div>
 
             <Particles
@@ -163,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section className="About relative flex justify-center items-center px-8 py-32 w-full overflow-hidden">
+        <section id="about" className="About relative flex justify-center items-center px-4 md: py-32 w-full overflow-hidden bg-[#080807] z-[0]">
             <div className="absolute w-[120vw] h-[120vw] top-[-93vw] right-[-56.5vw] md:top-[-20vw] md:right-[-8vw] md:w-[30vw] md:h-[30vw] rounded-full bg-purple-900/30 blur-[100px]"></div>
 
             <h1 className="text-[8vw] md:text-[4.5vw] leading-[130%] md:leading-[110%] font-medium max-w-[1440px] "
@@ -172,15 +175,16 @@ export default function Home() {
         </section>
 
         {/* Project */}
-        <section id="projects" className="Projects min-h-dvh py-16 flex flex-col gap-16 overflow-hidden px-10">
+        <section id="projects" className="Projects min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
             <h1 className=" text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleProject }}
             />
 
             <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {/* Card */}
-                <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                        <img src="/imgs/Debug.png" alt="" className="scale-[1.4]"/>
                     </div>
 
                     <div className="flex flex-col gap-5">
@@ -190,8 +194,9 @@ export default function Home() {
                 </div>
 
                 {/* Card */}
-                <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                        <img src="/imgs/TAS.png" alt="" className="scale-[1.4] hover:scale-150 duration-300 transition-all"/>
                     </div>
 
                     <div className="flex flex-col gap-5">
@@ -201,8 +206,9 @@ export default function Home() {
                 </div>
 
                 {/* Card */}
-                <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                    <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                        <img src="/imgs/Translator Pending.png" alt="" className="hover:scale-110 duration-300 transition-all"/>
                     </div>
 
                     <div className="flex flex-col gap-5">
@@ -215,17 +221,18 @@ export default function Home() {
         </section>
 
         {/* Promise */}
-        <section id="promise" className="Promise min-h-dvh py-16 flex flex-col gap-16 overflow-hidden px-10">
+        <section id="promise" className="Promise min-h-dvh py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
             <h1 className="  text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titlePromise }}
             />
 
             <div className="flex flex-col gap-8">
+
                 <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-8">
                     {/* Card */}
-                    <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl bg-[#0c0c0b] w-full">
-                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
-                            
+                    <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl bg-[#0c0c0b] w-full">
+                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                            <img src="/imgs/01Launch.png" alt="" className=""/>
                         </div>
 
                         <div className="flex flex-col gap-5">
@@ -235,7 +242,7 @@ export default function Home() {
                     </div>
 
                     {/* Card */}
-                    <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                    <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
                         <div className="relative flex flex-col justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
                             <Marquee className="[--duration:20s]">
                                 {firstRow.map((partnership, index) => (
@@ -260,8 +267,9 @@ export default function Home() {
                     </div>
 
                     {/* Card */}
-                    <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                    <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                            <img src="/imgs/03AI Development.png" alt="" className=""/>
                         </div>
 
                         <div className="flex flex-col gap-5">
@@ -271,8 +279,9 @@ export default function Home() {
                     </div>
 
                     {/* Card */}
-                    <div className="hidden md:flex xl:hidden flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                    <div className="hidden md:flex xl:hidden flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                            <img src="/imgs/AI Enchanment.png" alt="" className=""/>
                         </div>
 
                         <div className="flex flex-col gap-5">
@@ -284,8 +293,9 @@ export default function Home() {
 
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
                     {/* Card */}
-                    <div className="flex md:hidden xl:flex  flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
-                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72" >
+                    <div className="flex md:hidden xl:flex  flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                        <div className="flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
+                            <img src="/imgs/AI Enchanment.png" alt="" className=""/>
                         </div>
 
                         <div className="flex flex-col gap-5">
@@ -295,7 +305,7 @@ export default function Home() {
                     </div>
 
                     {/* Card */}
-                    <div className="flex flex-col gap-16 px-10 py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
+                    <div className="flex flex-col gap-4 md:gap-16 px-8 py-10 md:px-10 md:py-14 border border-[#232323] rounded-xl  bg-[#0c0c0b] w-full">
                         <div className="relative flex justify-center items-center border border-[#232323] rounded-xl h-72 overflow-hidden" >
                             <Globe/>
                         </div>
@@ -312,7 +322,7 @@ export default function Home() {
         </section>
 
         {/* Github */}
-        <section id="github" className="Github py-24 flex flex-col gap-16 overflow-hidden px-10">
+        <section id="github" className="Github py-24 flex flex-col gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
             <h1 className=" text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleGithub }}
             />
@@ -330,7 +340,7 @@ export default function Home() {
         </section>
 
         {/* Articles */}
-        <section id="articles" className="Articles py-16 flex flex-col gap-16 overflow-hidden px-10">
+        <section id="articles" className="Articles py-16 flex flex-col gap-4 md:gap-16 overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
             <h1 className="text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleArticles }}
             />
@@ -442,7 +452,7 @@ export default function Home() {
         </section>
 
         {/* Stay Informed and FAQ */}
-        <section className="StayInformed py-24 flex flex-col gap-28  overflow-hidden px-10">
+        <section id="faq" className="Faq relative py-24 flex flex-col gap-14 md:gap-28  overflow-hidden px-4 md:px-10 bg-[#080807] z-[0]">
             <h1 className="text-[13vw] md:text-[4.5vw] leading-[130%] md:leading-[100%] font-medium"
                 dangerouslySetInnerHTML={{ __html: titleInformed }}
             />
@@ -519,10 +529,9 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="Footer flex flex-col py-16 gap-4 overflow-hidden px-10">
+        <footer id="footer" className="Footer sticky bottom-0 left-0 right-0 flex flex-col py-16 gap-4 overflow-hidden px-4 md:px-10 z-[-1]">
             <div className="flex gap-8 justify-center items-center border-b-2 border-[#232323] pb-8">
-                <img src="https://framerusercontent.com/images/NNinEwTGKsz4wKs1Zzb0ABP41Dc.png" className="w-[7.5vw]" alt="" />
-                <h1 className="text-[7.5vw] leading-[100%]">{mainTitle}</h1>
+                <img src="/imgs/echo-logo.png" alt="" className=""/>
             </div>
 
             <div className="flex flex-col md:grid md:grid-cols-2">
